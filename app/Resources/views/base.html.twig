@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        <script>
+          function goLogIn(){
+              window.location.href = "{{ path('_security_check') }}";
+          }
+
+          function onFbInit() {
+              if (typeof(FB) != 'undefined' && FB != null ) {
+                  FB.Event.subscribe('auth.statusChange', function(response) {
+                      if (response.session || response.authResponse) {
+                          setTimeout(goLogIn, 500);
+                      } else {
+                          window.location.href = "{{ path('_security_logout') }}";
+                      }
+                  });
+              }
+          }
+        </script>
+    </head>
+    <body>
+        {{ facebook_initialize({'xfbml': true, 'fbAsyncInit': 'onFbInit();'}) }}
+        
+        {{ facebook_login_button({'autologoutlink': true}) }}
+            
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

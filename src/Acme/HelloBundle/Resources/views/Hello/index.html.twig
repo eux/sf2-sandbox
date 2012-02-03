@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+   Auanna!
+{% endblock %}
+
+{% block body %}
+   <div>Hello {{ name }}!</div>
+   
+   {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+       <div><a href="{{ path('logout') }}">Logout</a></div>
+   {% endif %}
+   <div><a href="{{ path('protected') }}">Go to a protected page</a></div>
+{% endblock %}

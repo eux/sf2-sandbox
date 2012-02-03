@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+   Protected!!!
+{% endblock %}
+
+{% block body %}
+   <div><a href="{{ path('logout') }}">Logout</a></div>
+   <div>Contenuto protetto</div>
+{% endblock %}
