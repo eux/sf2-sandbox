@@ -5,9 +5,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class HelloController extends Controller
 {
-  public function indexAction($name)
+  public function indexAction()
   {
-    return $this->render('AcmeHelloBundle:Hello:index.html.twig', array('name' => $name));
+    return $this->render('AcmeHelloBundle:Hello:index.html.twig');
   }
   
   public function helloAction($name)

@@ -7,10 +7,7 @@
 {% block body %}
    <div>Welcome</div>
    
-   {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-       <div><a href="{{ path('logout') }}">Logout</a></div>
-   {% endif %}
    <div>You can try to go on an  <a href="{{ path('hello', { 'name': 'eux' }) }}">open page that greets eux</a></div>
-   <div>Or You can try to go to a <a href="{{ path('hello', { 'name': 'eux' }) }}">page accessible only to logged users (fb + normal users)</a></div>
-   <div>Or You can try to go to a  <a href="{{ path('hello', { 'name': 'eux' }) }}">page reserved for admins (user: eux, password: auanna)</a></div>
+   <div>Or You can try to go to a <a href="{{ path('secured') }}">page accessible only to logged users (fb + normal users)</a></div>
+   <div>Or You can try to go to a  <a href="{{ path('protected') }}">page reserved for admins (user: eux, password: auanna)</a></div>
 {% endblock %}

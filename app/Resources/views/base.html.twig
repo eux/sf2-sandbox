@@ -25,8 +25,13 @@
     </head>
     <body>
         {{ facebook_initialize({'xfbml': true, 'fbAsyncInit': 'onFbInit();'}) }}
-        
-        {{ facebook_login_button({'autologoutlink': true}) }}
+        <div>    
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+           <a href="{{ path('logout') }}">Logout</a>
+        {% else %}
+           {{ facebook_login_button({'autologoutlink': true}) }}
+        {% endif %}
+        </div>  
             
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
