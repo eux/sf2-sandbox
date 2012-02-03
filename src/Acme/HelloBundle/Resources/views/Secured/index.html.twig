@@ -1,10 +1,10 @@
 {% extends '::base.html.twig' %}
 
 {% block title %}
-   Protected!!!
+  Secured!!!
 {% endblock %}
 
 {% block body %}
    <div><a href="{{ path('logout') }}">Logout</a></div>
-   <div>Contenuto protetto accessibile solo se sei un utente admin. E tu sei un utente admin vero?!?</div>
+   <div>Contenuto protetto accessibile solo ad utenti loggati (via facebook o normalmente), e tu sei un utente loggato vero?!?</div>
 {% endblock %}

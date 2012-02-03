@@ -1,6 +1,14 @@
+home:
+  pattern:  /
+  defaults: { _controller: AcmeHelloBundle:Hello:index }
+
 hello:
     pattern:  /hello/{name}
-    defaults: { _controller: AcmeHelloBundle:Hello:index }
+    defaults: { _controller: AcmeHelloBundle:Hello:hello }
+    
+secured:
+    pattern:  /secured
+    defaults: { _controller: AcmeHelloBundle:Secured:index }
     
 protected:
     pattern:  /admin/protected
