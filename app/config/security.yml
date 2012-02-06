@@ -42,6 +42,7 @@ security:
         main:
             pattern: ^/
             fos_facebook:
+                  check_path: /loginFb
                   app_url: "http://apps.facebook.com/appName/"
                   server_url: "http://localhost/facebookApp/"
             form_login:

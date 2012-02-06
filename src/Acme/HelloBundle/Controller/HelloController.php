@@ -19,5 +19,11 @@ class HelloController extends Controller
     // render a PHP template instead
     // return $this->render('AcmeHelloBundle:Hello:index.html.php', array('name' => $name));
   }
+  
+  //dummy controller
+  public function loginFbAction() 
+  {
+      
+  }
 
 }

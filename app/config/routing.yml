@@ -8,7 +8,8 @@ AcmeHelloBundle:
 #   prefix:   /_internal
 
 _security_check:
-      pattern:  /login_check
+      pattern:  /loginFb
+      defaults: { _controller: AcmeHelloBundle:Hello:loginFbAction }
       
 _security_logout:
   pattern:  /logout
