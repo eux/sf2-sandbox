@@ -24,9 +24,16 @@ security:
 #                eux:  { password: eux, roles: 'ROLE_USER' }
 #                admin: { password: kitten, roles: 'ROLE_ADMIN' }
 
+#    providers:
+#        fos_userbundle:
+#            id: fos_user.user_manager
     providers:
+        chain_provider:
+            providers: [fos_userbundle, my_fos_facebook_provider]
         fos_userbundle:
             id: fos_user.user_manager
+        my_fos_facebook_provider:
+            id: my.facebook.user
 
     encoders:
         FOS\UserBundle\Model\UserInterface: sha512
